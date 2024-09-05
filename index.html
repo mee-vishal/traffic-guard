@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrafficGuard - Smart Traffic Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Set the base font-size */
+        html {
+            font-size: 62.5%; /* 1rem = 10px, default */
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            font-size: 1.6rem; /* 16px */
+        }
+
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/1600x900/?urban,city');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .container {
+            width: 85%;
+            max-width: 120rem; /* 1200px */
+            margin: 0 auto;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 0.4rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar .logo {
+            font-size: 2.4rem; /* 24px */
+            font-weight: 600;
+            color: #fff;
+            margin-left:1rem;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 0rem;
+            margin-right: 5rem;
+        }
+
+        .nav-links li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 1.6rem; /* 16px */
+        }
+
+        .nav-links li a:hover {
+            color: #e74c3c;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 100%;
+        }
+
+        .hero-content {
+            max-width: 60rem; /* 600px */
+        }
+
+        .hero h1 {
+            font-size: 4.8rem; /* 48px */
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 1.8rem; /* 18px */
+            margin-bottom: 4rem;
+        }
+
+        .cta-button {
+            padding: 1.5rem 3rem;
+            background-color: #e74c3c;
+            color: #fff;
+            text-transform: uppercase;
+            border-radius: 3rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            font-size: 1.6rem; /* 16px */
+        }
+
+        .cta-button:hover {
+            background-color: #c0392b;
+        }
+
+        .about-section {
+            padding: 8rem 0;
+            background-color: #fff;
+        }
+
+        .about-section h2 {
+            text-align: center;
+            font-size: 3.2rem; /* 32px */
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .about-section p {
+            max-width: 80rem; /* 800px */
+            margin: 0 auto;
+            font-size: 1.8rem; /* 18px */
+            line-height: 1.7;
+            text-align: center;
+        }
+
+        .services-section {
+            background-color: #f1f1f1;
+            padding: 8rem 0;
+        }
+
+        .services-section h2 {
+            text-align: center;
+            font-size: 3.2rem; /* 32px */
+            margin-bottom: 5rem;
+            color: #333;
+        }
+
+        .services-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 3rem;
+        }
+
+        .service {
+            background-color: #fff;
+            padding: 4rem;
+            border-radius: 1rem;
+            box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .service:hover {
+            box-shadow: 0 0 4rem rgba(0, 0, 0, 0.2);
+        }
+
+        .service h3 {
+            font-size: 2.2rem; /* 22px */
+            margin-bottom: 2rem;
+            color: #e74c3c;
+        }
+
+        .service p {
+            font-size: 1.6rem; /* 16px */
+            line-height: 1.6;
+        }
+
+        .contact-section {
+            background-color: #333;
+            color: #fff;
+            padding: 8rem 0;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 3.2rem; /* 32px */
+            margin-bottom: 2rem;
+        }
+
+        .contact-section p {
+            font-size: 1.8rem; /* 18px */
+            margin-bottom: 3rem;
+        }
+
+        .contact-button {
+            padding: 1.5rem 3rem;
+            background-color: #e74c3c;
+            color: #fff;
+            text-transform: uppercase;
+            border-radius: 3rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            font-size: 1.6rem; /* 16px */
+        }
+
+        .contact-button:hover {
+            background-color: #c0392b;
+        }
+
+        footer {
+            background-color: #222;
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        footer a {
+            color: #e74c3c;
+            text-decoration: none;
+            font-weight: 400;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Media Queries */
+        @media (max-width: 768px) {
+            html {
+                font-size: 56.25%; /* 1rem = 9px */
+            }
+
+            .services-grid {
+                flex-direction: column;
+            }
+
+            .service {
+                margin-bottom: 3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            html {
+                font-size: 50%; /* 1rem = 8px */
+            }
+
+            .hero h1 {
+                font-size: 3.2rem; /* 32px */
+            }
+
+            .hero p {
+                font-size: 1.6rem; /* 16px */
+            }
+
+            .cta-button {
+                padding: 1rem 2rem;
+                font-size: 1.4rem; /* 14px */
+            }
+
+            .navbar .logo {
+                font-size: 2rem; /* 20px */
+            }
+
+            .nav-links li{
+                 margin-right: 2rem;
+                 
+                /* padding: -2rem; */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">TrafficGuard</div>
+            <ul class="nav-links">
+                <li id="aboutus"><a href="#about" >About Us</a></li>
+                <li id="service"><a href="#services">Services</a></li>
+                <li id="contactus"><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Smart Traffic Management & Accident Prevention</h1>
+                <p>Revolutionizing urban mobility with cutting-edge solutions for a safer tomorrow.</p>
+                <a href="#services" class="cta-button">Explore Our Services</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>About TrafficGuard</h2>
+            <p>At TrafficGuard, we are committed to optimizing traffic flow, improving parking systems, and preventing accidents through advanced technology.</p>
+        </div>
+    </section>
+
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service">
+                    <h3>Traffic Optimization</h3>
+                    <p>Our AI-powered traffic solutions ensure smoother traffic flow and reduced congestion in urban areas.</p>
+                </div>
+                <div class="service">
+                    <h3>Accident Prevention</h3>
+                    <p>We provide real-time monitoring and alerts to reduce accidents and ensure pedestrian safety.</p>
+                </div>
+                <div class="service">
+                    <h3>Smart Parking</h3>
+                    <p>With our advanced parking systems, drivers can find available parking spots more efficiently, reducing waiting times.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>For more information about our services, reach out to us and we'll be happy to assist you.</p>
+            <a href="mailto:info@trafficguard.com" class="contact-button">Get In Touch</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 TrafficGuard. All Rights Reserved.</p>
+        <p><a href="#contact">Contact Us</a></p>
+    </footer>
+    <script>
+         document.getElementById('service').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector('.container').scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+
+  document.getElementById('contactus').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector('.contact-section').scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+
+  document.getElementById('aboutus').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector('.about-section').scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+    </script>
+</body>
+
+</html>
