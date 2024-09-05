@@ -297,7 +297,7 @@
             <div class="hero-content">
                 <h1>Smart Traffic Management & Accident Prevention</h1>
                 <p>Revolutionizing urban mobility with cutting-edge solutions for a safer tomorrow.</p>
-                <a href="#services" class="cta-button">Explore Our Services</a>
+                <a href="#services" class="cta-button" id="explore-service">Explore Our Services</a>
             </div>
         </div>
     </header>
@@ -359,6 +359,14 @@
   document.getElementById('aboutus').addEventListener('click', function(e) {
     e.preventDefault();
     document.querySelector('.about-section').scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+
+
+  document.getElementById('explore-service').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector('.services-section').scrollIntoView({
       behavior: 'smooth'
     });
   });
